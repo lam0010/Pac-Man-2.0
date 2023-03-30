@@ -701,7 +701,7 @@ def draw_misc():
     score_text = font_score.render(f"Score: {score}", True, "white")
     screen.blit(score_text, (10, 920))
     if powerup:
-        pygame.draw.circle(screen, "blue", (170, 930), 12)
+        pygame.draw.circle(screen, "blue", (175, 930), 12)
     for i in range(lives):
         screen.blit(pygame.transform.scale(player_images[0], (30, 30)), (650 + i * 40, 915))
     if game_over:
