@@ -35,9 +35,9 @@ timer = pygame.time.Clock()
 fps = 60
 
 # Fonts
-font_score = pygame.font.SysFont("arialblack", 15)
-font_over = pygame.font.SysFont("arialblack", 30)
-font_win = pygame.font.SysFont("arialblack", 30)
+font_score = pygame.font.Font('font/Pixeltype.ttf', 40)
+font_over = pygame.font.Font('font/Pixeltype.ttf', 50)
+font_win = pygame.font.Font('font/Pixeltype.ttf', 50)
 
 # Board, Level & Players
 level = copy.deepcopy(boards)
@@ -701,22 +701,22 @@ def draw_misc():
     score_text = font_score.render(f"Score: {score}", True, "white")
     screen.blit(score_text, (10, 920))
     if powerup:
-        pygame.draw.circle(screen, "blue", (140, 930), 15)
+        pygame.draw.circle(screen, "blue", (170, 930), 12)
     for i in range(lives):
         screen.blit(pygame.transform.scale(player_images[0], (30, 30)), (650 + i * 40, 915))
     if game_over:
         pygame.draw.rect(screen, "white", [50, 200, 800, 300],0, 10)
         pygame.draw.rect(screen, "black", [70, 220, 760, 260], 0, 10)
-        gameover_text = font_over.render("Game over! Press space bar to restart!", True, "white")
+        gameover_text = font_over.render("Game  over!  Press  space  bar  to  restart!", True, "white")
         screen.blit(gameover_text, (100, 300))
-        game_score = font_over.render(f"Your Score is {score}", True, "white")
+        game_score = font_over.render(f"Your Score  is  {score}", True, "white")
         screen.blit(game_score, (100, 350))
     if game_won:
         pygame.draw.rect(screen, "white", [50, 200, 800, 300],0, 10)
         pygame.draw.rect(screen, "dark gray", [70, 220, 760, 260], 0, 10)
-        game_won_text = font_win.render("Victory! Press space bar to restart!", True, "white")
+        game_won_text = font_win.render("Victory!  Press  space  bar  to  restart!", True, "white")
         screen.blit(game_won_text, (100, 300))
-        game_score = font_win.render(f"Your Score is {score}", True, "white")
+        game_score = font_win.render(f"Your  Score  is  {score}", True, "white")
         screen.blit(game_score, (100, 350))
 
 
